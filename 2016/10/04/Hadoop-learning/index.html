@@ -5,16 +5,19 @@
   
   <title>Hadoop_learning | 翼をください</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hadoop的框架最核心的设计就是：HDFS和MapReduce。HDFS为海量的数据提供了存储，则MapReduce为海量的数据提供了计算。">
+  <meta name="description" content="1.
+1.1&amp;emsp;&amp;emsp;Hadoop的框架最核心的设计就是：HDFS和MapReduce。HDFS为海量的数据提供了存储，则MapReduce为海量的数据提供了计算。Hadoop这个名字不是一个缩写，它是一个虚构的名字。该项目的创建者，Doug Cutting如此解释Hadoop的得名：”这个名字是我孩子给一个棕黄色的大象样子的填充玩具命名的。我的命名标准就是简短，容易发音和拼写，没有">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hadoop_learning">
 <meta property="og:url" content="http://adlith.github.io/2016/10/04/Hadoop-learning/index.html">
 <meta property="og:site_name" content="翼をください">
-<meta property="og:description" content="Hadoop的框架最核心的设计就是：HDFS和MapReduce。HDFS为海量的数据提供了存储，则MapReduce为海量的数据提供了计算。">
-<meta property="og:updated_time" content="2016-10-04T10:19:06.989Z">
+<meta property="og:description" content="1.
+1.1&amp;emsp;&amp;emsp;Hadoop的框架最核心的设计就是：HDFS和MapReduce。HDFS为海量的数据提供了存储，则MapReduce为海量的数据提供了计算。Hadoop这个名字不是一个缩写，它是一个虚构的名字。该项目的创建者，Doug Cutting如此解释Hadoop的得名：”这个名字是我孩子给一个棕黄色的大象样子的填充玩具命名的。我的命名标准就是简短，容易发音和拼写，没有">
+<meta property="og:updated_time" content="2016-10-05T01:27:45.785Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop_learning">
-<meta name="twitter:description" content="Hadoop的框架最核心的设计就是：HDFS和MapReduce。HDFS为海量的数据提供了存储，则MapReduce为海量的数据提供了计算。">
+<meta name="twitter:description" content="1.
+1.1&amp;emsp;&amp;emsp;Hadoop的框架最核心的设计就是：HDFS和MapReduce。HDFS为海量的数据提供了存储，则MapReduce为海量的数据提供了计算。Hadoop这个名字不是一个缩写，它是一个虚构的名字。该项目的创建者，Doug Cutting如此解释Hadoop的得名：”这个名字是我孩子给一个棕黄色的大象样子的填充玩具命名的。我的命名标准就是简短，容易发音和拼写，没有">
   
   
     <link rel="icon" href="favicon.png">
@@ -144,13 +147,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><br>Hadoop的框架最核心的设计就是：HDFS和MapReduce。HDFS为海量的数据提供了存储，则MapReduce为海量的数据提供了计算。<br></p>
-
+        <ul>
+<li><a href="#1">1.</a></li>
+<li><a href="#1.1">1.1</a><br><p><br>&emsp;&emsp;Hadoop的框架最核心的设计就是：HDFS和MapReduce。HDFS为海量的数据提供了存储，则MapReduce为海量的数据提供了计算。<br></p><p><br>Hadoop这个名字不是一个缩写，它是一个虚构的名字。该项目的创建者，Doug Cutting如此解释Hadoop的得名：”这个名字是我孩子给一个棕黄色的大象样子的填充玩具命名的。我的命名标准就是简短，容易发音和拼写，没有太多的意义，并且不会被用于别处。小孩子是这方面的高手。Google就是由小孩命名的。<br></p><br>Hadoop 是一个能够对大量数据进行分布式处理的软件框架。但是 Hadoop 是以一种可靠、高效、可伸缩的方式进行处理的。Hadoop 是可靠的，因为它假设计算元素和存储会失败，因此它维护多个工作数据副本，确保能够针对失败的节点重新分布处理。Hadoop 是高效的，因为它以并行的方式工作，通过并行处理加快处理速度。Hadoop 还是可伸缩的，能够处理 PB 级数据。此外，Hadoop 依赖于社区服务器，因此它的成本比较低，任何人都可以使用。<h4 id="Hadoop的局限和不足">Hadoop的局限和不足</h4></li>
+<li>抽象层次低，需要手工编写代码来完成，使用上难以上手。</li>
+<li>只提供两个操作，Map和Reduce，表达力欠缺。</li>
+<li>一个Job只有Map和Reduce两个阶段（Phase），复杂的计算需要大量的Job完成，Job之间的依赖关系是由开发者自己管理的。</li>
+<li>处理逻辑隐藏在代码细节中，没有整体逻辑</li>
+<li>中间结果也放在HDFS文件系统中</li>
+<li>ReduceTask需要等待所有MapTask都完成后才可以开始</li>
+<li>时延高，只适用Batch数据处理，对于交互式数据处理，实时数据处理的支持不够</li>
+<li>对于迭代式数据处理性能比较差<h2 id="1">1.Hadoop历史介绍</h2></li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://adlith.github.io/2016/10/04/Hadoop-learning/" data-id="citvcayty00003olx50ebptcu" class="article-share-link">分享到</a>
+      <a data-url="http://adlith.github.io/2016/10/04/Hadoop-learning/" data-id="citw8je7000006slx2t90ni9r" class="article-share-link">分享到</a>
       
       
     </footer>
